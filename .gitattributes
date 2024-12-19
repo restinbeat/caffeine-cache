@@ -1,2 +1,6 @@
 src/** linguist-documentation=false
 src/** linguist-vendored=false
+
+/gradlew text eol=lf
+*.bat text eol=crlf
+*.jar binary
