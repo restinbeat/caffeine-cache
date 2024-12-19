@@ -56,6 +56,18 @@
   public Book getBookByIsbn(String isbn) {
       return bookRepository.findByIsbn(isbn);
   }
+  
+### @CacheEvict
+- **기능**:
+  - 캐시를 무효화하거나 제거.
+  - 데이터가 변경되었을 때, 캐시를 갱신하여 최신 상태를 유지.
+
+- **사용 예**:
+  ```java
+  @CacheEvict(value = "books", key = "#isbn")
+  public void updateBook(String isbn, Book updatedBook) {
+      bookRepository.save(updatedBook);
+  }
 
 LIRS (Low Inter-reference Recency Set), LRU 등의 알고리즘보다 효율적.
 
